@@ -90,10 +90,10 @@ This project is licensed under the MIT License.
 
 ## Author
 **[Emmanuel Rotich]**
-- **LinkedIn**:[https://www.linkedin.com/in/rotich-emmanuel-14ba25188](https://www.linkedin.com/in/rotich-emmanuel-14ba25188)
-- **X(Twitter)**:[https://www.x.com/mikemanuu](https://www.x.com/mikemanuu)
-- **Github**:[https://github.com/mikemanuu](https://github.com/mikemanuu)
-- **Email**:[mikemanuu273@gmail.com](mailto:mikemanuu273@gmail.com)
+- **LinkedIn**:[(https://www.linkedin.com/in/rotich-emmanuel-14ba25188)]
+- **X(Twitter)**:[(https://www.x.com/mikemanuu)]
+- **Github**:[(https://github.com/mikemanuu)]
+- **Email**:[(mailto:mikemanuu273@gmail.com)]
 
 
 
