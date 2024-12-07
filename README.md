@@ -4,20 +4,20 @@ The Mabati Web Application is an e-commerce platform designed to streamline the 
 
 ## Features
 ### For Customers
-- *Product Browsing:* View products by categories such as Roofing Sheets, Gutters, and Accessories.
-- *Product Details:* View detailed descriptions of products, including specifications and images.
-- *Shopping Cart:* Add items to the cart, update quantities, remove items, and view total cost.
-- *User Dashboard:* Access order history, saved items, account settings, and manage personal information.
+- **Product Browsing:** View products by categories such as Roofing Sheets, Gutters, and Accessories.
+- **Product Details:** View detailed descriptions of products, including specifications and images.
+- **Shopping Cart:** Add items to the cart, update quantities, remove items, and view total cost.
+- **User Dashboard:** Access order history, saved items, account settings, and manage personal information.
 ### For Administrators
-- *Admin Dashboard:* Manage products, categories, orders, and customer messages.
-- *Quick Stats:* View real-time data on total products, orders, registered users, and inquiries.
-- *Product Upload:* Dynamically upload new products with images and categories.
-- *Order Management:* Process and track customer orders efficiently.
+- **Admin Dashboard:** Manage products, categories, orders, and customer messages.
+- **Quick Stats:** View real-time data on total products, orders, registered users, and inquiries.
+- **Product Upload:** Dynamically upload new products with images and categories.
+- **Order Management:** Process and track customer orders efficiently.
 ## Technologies Used
-- *Backend:* Django (Python)
-- *Frontend:* HTML, CSS, Bootstrap, JavaScript
-- *Database:* MySQL
-- *Deployment:* Apache
+- **Backend:** Django (Python)
+- **Frontend:** HTML, CSS, Bootstrap, JavaScript
+- **Database:** MySQL
+- **Deployment:** Apache
 ## Installation
 ### Prerequisites
 - Python 3.8+
@@ -25,37 +25,37 @@ The Mabati Web Application is an e-commerce platform designed to streamline the 
 - Virtual environment tool (venv or virtualenv)
 - Django
 ### Steps
-1. *Clone the Repository*
+1. **Clone the Repository**
 ```
 git clone https://github.com/mikemanuu/MabatiWebApp.git  
 cd MabatiWebApp
 ``` 
-2. *Set Up a Virtual Environment*
+2. **Set Up a Virtual Environment**
 ```
 python -m venv env  
 source env/bin/activate  # For Linux/Mac  
 env\Scripts\activate     # For Windows  
 ```
 
-3. *Install Dependencies*
+3. **Install Dependencies**
 ```
 pip install -r 
 requirements.txt  
 ```
-4. *Set Up the Database*
+4. **Set Up the Database**
 - Create a MySQL database (e.g., mabati).
 - Update settings.py with your database credentials.
 - 
-5. *Run Migrations*
+5. **Run Migrations**
 ```
 python manage.py makemigrations  
 python manage.py migrate  
 ```
-6. *Create Superuser*
+6. **Create Superuser**
 ```
 python manage.py createsuperuser 
 ``` 
-7. *Start the Server*
+7. **Start the Server**
 ```
 python manage.py runserver  
 ```
@@ -71,16 +71,16 @@ python manage.py runserver
 ## Directory Structure
 ```
 MabatiWebApp/  
-├── mabatiapp/         # Main Django app  
-│   ├── models.py      # Database models  
-│   ├── views.py       # Business logic  
-│   ├── urls.py        # URL configurations  
-├── templates/     # HTML templates  
-├── static/        # CSS, JS, images  
-├── media/        # Dynamic content
-├── manage.py          # Django management script  
-├── requirements.txt   # Python dependencies  
-└── README.md          # Project documentation  
+├── mabatiapp/          
+│   ├── models.py        
+│   ├── views.py      
+│   ├── urls.py         
+├── templates/     
+├── static/        
+├── media/        
+├── manage.py         
+├── requirements.txt    
+└── README.md          
 ```
 ## Contribution
 Contributions are welcome! Please fork the repository and submit a pull request with your changes.
@@ -89,10 +89,11 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 This project is licensed under the MIT License.
 
 ## Author
-[Emmanuel Rotich]
-- *LinkedIn*:[https://www.linkedin.com/in/rotich-emmanuel-14ba25188]
-- *X(Twitter)*:[https://www.x.com/mikemanuu]
-- *Email*:[mikemanuu273@gmail.com]
+**[Emmanuel Rotich]**
+- **LinkedIn**:[https://www.linkedin.com/in/rotich-emmanuel-14ba25188](https://www.linkedin.com/in/rotich-emmanuel-14ba25188)
+- **X(Twitter)**:[https://www.x.com/mikemanuu](https://www.x.com/mikemanuu)
+- **Github**:[https://github.com/mikemanuu](https://github.com/mikemanuu)
+- **Email**:[mikemanuu273@gmail.com](mailto:mikemanuu273@gmail.com)
 
 
 
