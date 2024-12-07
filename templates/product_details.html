@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'static/assets/css/main.css' %}">
+<style>
+
+    .pro-details{
+        border: solid;
+        border-radius: 20px;
+        margin: 30px;
+        border-color: orange;
+    }
+    .p-details {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 20px 100px;
+    }
+    .p-details img {
+        border-radius: 20px;
+        height: 400px;
+        width: 400px;
+    }
+
+    .p-info btn{
+        margin-left: 10px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .p-info btn:hover{
+        background-color: orange;
+        color: black;
+        border: orange;
+    }
+    .p-info{
+        flex-grow: 1;
+    }
+    @media (max-width: 768px)  {
+        .p-details{
+            flex-direction: column-reverse;
+            text-align: justify;
+            align-items: center;
+        }
+        .p-details img{
+            width: 100%;
+            height: 70%;
+            margin-right: 10px;
+        }
+        .uploaded-image {
+            display: block;
+            align-items: center;
+            height: 10%;
+            width: 100%;
+    }
+        .p-info btn{
+            margin-left: 30px;
+            margin-top: 35px;
+            margin-bottom: 1px;
+    }
+
+        
+    }
+
+</style>
+{% endblock %}
+
+{% block body %}
+
+    <br><br><br><br>
+    <!-- Page Title -->
+
+      <div class="container position-relative text-center text-primary-emphasis">
+        <h2 class="text-center text-danger-emphasis">Product Details</h2>
+      </div><!-- End Page Title -->
+      <div class="pro-details">
+        <div class="p-details">
+        <div class=" p-info">
+            <h3 class="text-danger-emphasis text-justify text-decoration-underline">{{ product.name }}</h3>
+                    <p>Description: {{ product.description }}</p>
+                    <p>Price(Ksh): {{ product.price }}</p>
+                    <p>Material: {{ product.material }}</p>
+                    <p>Length: {{ product.length }}</p>
+                    <p>Weight: {{ product.weight }}</p>
+                    <p>Warranty: {{ product.warranty }}</p>
+                    <p>Color: {{ product.colors }}</p>
+
+                    <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary">Add to Cart</a>
+        </div>
+        <div class="uploaded-image" style="margin-bottom: 1px; border-radius: 20px">
+            <img src="{{ product.images.url }}" alt="{{ product.name }}">
+            <form method="POST" action="/add_to_cart/{{ product.id }}/" style="margin-bottom: 1px; margin-left: 140px">
+                {% csrf_token %}
+            </form>
+        </div>
+    </div>
+      </div>
+
+{% endblock %}

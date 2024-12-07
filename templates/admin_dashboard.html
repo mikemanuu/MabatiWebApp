@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'static/assets/css/main.css' %}">
+<style>
+    #dashboardMenu {
+        border-radius: 5px;
+        color: white;
+    }
+    .admin-container a {
+        color: blue;
+    }
+
+    .admin-container a:hover {
+        background-color: #feb900;
+        border-radius: 5px;
+
+    }
+
+</style>
+{% endblock %}
+
+{% block body %}
+    <br><br><br>
+    <div class="admin-container my-4" style="margin: 20px">
+        <h2 class="text-center mb-2 text-danger-emphasis">Admin Dashboard</h2>
+        <div class="row">
+            <div class="list-group list-group-horizontal text-center mb-3" id="dashboardMenu">
+                <a href="{% url 'add_product' %}" class="list-group-item-action">Add Products</a>
+                <a href="{% url 'products' %}" class="list-group-item-action">View Products</a>
+                <a href="{% url 'contact_view' %}" class="list-group-item-action">View Messages</a>
+                <a href="" class="list-group-item-action">Customers</a>
+                <a href="" class="list-group-item-action">Settings</a>
+            </div>
+
+            <div class="col-md-9">
+                <br>
+                    <p>Select an option above to manage the system.</p>
+                <div class="card" style="margin-bottom: 20px">
+                    <div class="card-header text-center text-uppercase">Quick Stats</div>
+                    <div class="card-body" style="align-items: center">
+                        <p>Total Products: {{ total_products }}</p>
+                        <p>Total Orders: {{ total_orders }}</p>
+                        <p>New Messages: {{ new_messages }}</p>
+                        <p>Total Customers: {{ new_messages }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

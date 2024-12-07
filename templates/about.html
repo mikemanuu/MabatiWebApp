@@ -1,0 +1,236 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'static/assets/css/main.css' %}">
+<style>
+    #team-sec {
+        color: blue;
+        display: flex;
+        flex-direction: row;
+
+</style>
+{% endblock %}
+
+{% block body %}
+    
+    <!-- Page Title -->
+    <div class="page-title dark-background" style="background-image: url({% static 'assets/img/page-title-bg.jpg' %}); padding-top: 100px; padding-bottom: 10px">
+      <div class="container position-relative">
+        <h1>About Us</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container">
+
+        <div class="row position-relative">
+
+          <div class="col-lg-7 about-img" data-aos="zoom-out" data-aos-delay="200"><img src="{% static 'assets/img/about.jpg' %}" height="50" width="50"></div>
+
+          <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="inner-title">Get To Know Us</h2>
+            <div class="our-story">
+              <h3>Our Story</h3>
+              <p>Our story began with a vision to revolutionize roofing industry by providing top-quality decra and mabati products that combine durability, affordability and style. From humble beginnings, we have grown into a trusted name, empowering communities to build homes and businesses that stand the test of time. Every step of the way, we have remained committed to innovation, exceptional customer service and sustainable practices..</p>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> <span>Established with the goal of making durable roofing accessible to everyone.</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Expanded operations to serve individuals, contactors and retailers across Kenya and beyond.</span></li>
+                <li><i class="bi bi-check-circle"></i> <span>Recognized for our consistent quality and commitment to environmental responsibility.</span></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+        <!-- Stats Counter Section -->
+    <section id="stats-counter" class="stats-counter section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Stats</h2>
+        <p>Our success is reflected in the numbers. From satisfied clients to completed projects, our statistics showcase the trust and confidence in our customers place in us. These figures represent out dedication to quality, innovation and service excellence over the years.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Happy Clients</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="120" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Projects</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-headset color-green flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="800" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Hours Of Support</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-people color-pink flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Hard Workers</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Stats Counter Section -->
+
+    <section id="team" class="team section">
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Our Team</h2>
+        <p>Meet the dedicated team behind our company. Our success is driven by a passionate group of professionals committed to delivering exceptional service. Together, we work to ensure every project is completed with excellence, reliability and care.</p>
+      </div><!-- End Section Title -->
+
+    <div class="row text-center m-0 p-0" id="team-sec">
+      <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-5" data-aos="fade-up" data-aos-delay="500">
+        <div class="bg-white rounded shadow-sm py-5 px-4 bg-body-secondary m-2"><img src="{% static 'assets/img/team/team-3.jpg' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Collins Kandie</h5><span class="small text-muted">CEO/Managing Director</span>
+          <div class="social">
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+      </div>
+      <!-- End-->
+
+      <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-5" data-aos="fade-up" data-aos-delay="500">
+        <div class="bg-white rounded shadow-sm py-5 px-4 bg-body-secondary m-2"><img src="{% static 'assets/img/team/team-2.jpg' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Agnes Kamau</h5><span class="small text-muted">Sales & Marketing Manager</span>
+          <div class="social">
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+      </div>
+      <!-- End-->
+
+      <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-5" data-aos="fade-up" data-aos-delay="500">
+        <div class="bg-white rounded shadow-sm py-5 px-4 bg-body-secondary m-2"><img src="{% static 'assets/img/team/team-4.jpg' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Mercy Rotich</h5><span class="small text-muted">Customer Service Representative</span>
+          <div class="social">
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <!-- End-->
+
+      <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-5" data-aos="fade-up" data-aos-delay="500">
+        <div class="bg-white rounded shadow-sm py-5 px-4 bg-body-secondary m-2"><img src="{% static 'assets/img/team/team-1.jpg' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Harrison Ngetich</h5><span class="small text-muted">Logistics & Supply Chain Manager</span>
+         <div class="social">
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+         </div>
+        </div>
+      </div>
+      <!-- End-->
+
+        <!-- Team item-->
+      <div class="col-xl-3 col-sm-6 mb-5" data-aos="fade-up" data-aos-delay="500">
+        <div class="bg-white rounded shadow-sm py-5 px-4 bg-body-secondary m-2">
+            <img src="{% static 'assets/img/team/team-7.jpg' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Emmanuel Rotich</h5><span class="small text-muted">Graphics Designer</span>
+            <div class="social">
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+      </div>
+      <!-- End-->
+
+        <div class="col-xl-3 col-sm-6 mb-5" data-aos="fade-up" data-aos-delay="500">
+        <div class="bg-white rounded shadow-sm py-5 px-4 bg-body-secondary m-2">
+            <img src="{% static 'assets/img/team/team-1.jpg' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Shadrack Mutinda</h5><span class="small text-muted">Loader</span>
+            <div class="social">
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+      </div>
+      <!-- End-->
+
+        <div class="col-xl-3 col-sm-6 mb-5" data-aos="fade-up" data-aos-delay="500">
+        <div class="bg-white rounded shadow-sm py-5 px-4 bg-body-secondary m-2">
+            <img src="{% static 'assets/img/team/team-1.jpg' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Anthony Wanyama</h5><span class="small text-muted">Loader</span>
+            <div class="social">
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+      </div>
+      <!-- End-->
+
+        <div class="col-xl-3 col-sm-6 mb-5" data-aos="fade-up" data-aos-delay="500">
+        <div class="bg-white rounded shadow-sm py-5 px-4 bg-body-secondary m-2">
+            <img src="{% static 'assets/img/team/team-1.jpg' %}" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+          <h5 class="mb-0">Kevin Omollo</h5><span class="small text-muted">Loader</span>
+            <div class="social">
+                <a href="#"><i class="bi bi-twitter-x"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+      </div>
+      <!-- End-->
+
+    </div>
+    </div>
+    </section>
+
+
+
+{% endblock %}

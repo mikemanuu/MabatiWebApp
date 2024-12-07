@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+    <br><br><br><br>
+
+    <h2 class="heading text-center text-danger-emphasis">People who contacted us</h2>
+    <div class="table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl table-responsive-xxl">
+    <table class="table table-info table-bordered table-striped container">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Message</th>
+            <th>Action</th>
+        </tr>
+
+        {% for x in contact %}
+            <tr>
+                <td>{{ x.name }}</td>
+                <td>{{ x.email }}</td>
+                <td>{{ x.subject }}</td>
+                <td>{{ x.message }}</td>
+                <td>
+                    <a href="/delete/{{ x.id }}" class="btn btn-danger m-1 p-1">DELETE</a>
+                </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+    </div>
+
+{% endblock %}

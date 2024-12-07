@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'static/assets/css/main.css' %}">
+<style>
+    .p-container {
+        background-color: #f8f9fa;
+    }
+    .card{
+        border-radius: #343a40;
+        background-color: #bababa;
+        margin: 10px;
+    }
+    form{
+        margin: 20px;
+        padding: 50px;
+    }
+
+</style>
+{% endblock %}
+
+{% block body %}
+
+    <br><br>
+<div class="p-container mt-5">
+
+    <h1 class="text-center text-danger-emphasis">Add a New Product</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card body">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            <label for="id_name" class="form-label">Product Name</label>
+                            {{ form.name|add_class:"form-control" }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_description" class="form-label">Description</label>
+                            {{ form.description|add_class:"form-control" }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_price" class="form-label">Price</label>
+                            {{ form.price|add_class:"form-control" }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_image" class="form-label">Image</label>
+                            {{ form.images|add_class:"form-control" }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_category" class="form-label">Category</label>
+                            <select name="category" id="category" class="form-control">
+                                <option value="roofing_sheets">Roofing Sheets</option>
+                                <option value="gutters_drainage">Gutters and Drainage</option>
+                                <option value="accessories">Accessories</option>
+                                <option value="tools_hardware">Tools and Hardware</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_material" class="form-label">Material</label>
+                            {{ form.material|add_class:"form-control" }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_length" class="form-label">Length</label>
+                            {{ form.length|add_class:"form-control" }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_weight" class="form-label">Weight</label>
+                            {{ form.weight|add_class:"form-control" }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_warranty" class="form-label">Warranty</label>
+                            {{ form.warranty|add_class:"form-control" }}
+                        </div>
+                        <div class="mb-3">
+                            <label for="id_colors" class="form-label">Colors</label>
+                            {{ form.colors|add_class:"form-control" }}
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Add Product</button>
+                    </form>
+                    {% if form.errors %}
+                    <div class="alert alert-danger">
+                        {{ form.errors }}
+                    {% endif %}
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

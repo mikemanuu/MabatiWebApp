@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block styles %}
+<link rel="stylesheet" href="{% static 'static/assets/css/main.css' %}">
+<style>
+#mg img{
+    height: 300px;
+    width: 500px;
+}
+.p-nav{
+    font-size: 14px;
+    margin-top: 0;
+}
+
+#p-nav a{
+    text-decoration: none;
+    padding: 0px 5px;
+    margin: 5px;
+    color: blue;
+    display: inline-block;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+#p-nav a:hover{
+    background-color: #555;
+    color: white;
+    border-radius: 5px;
+}
+
+</style>
+{% endblock %}
+
+{% block body %}
+    <br><br>
+     <!-- Products Section -->
+    <section id="projects" class="projects section" style="padding-top: 80px">
+      <div class="container">
+        <h1 class="text-center text-secondary-emphasis">Products</h1>
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+                <div class="d-flex justify-content-between mb-3">
+                    <nav class="p-nav">
+                        <ul class="nav responsive" id="p-nav">
+                           <li class="nav-item">
+                               <a href="{% url 'products_by_category' 'all' %}" class="nav-link {% if selected_category == 'all' %}active{% endif %}">All</a>
+                           </li>
+                            <li class="nav-item">
+                               <a href="{% url 'products_by_category' 'roofing_sheets' %}" class="nav-link {% if selected_category == 'roofing sheets' %}active{% endif %}">Roofing Sheets</a>
+                           </li>
+                            <li class="nav-item">
+                               <a href="{% url 'products_by_category' 'gutters_drainage' %}" class="nav-link {% if selected_category == 'gutters_drainage' %}active{% endif %}">Gutters and Drainage</a>
+                           </li>
+                            <li class="nav-item">
+                               <a href="{% url 'products_by_category' 'accessories' %}" class="nav-link {% if selected_category == 'accessories' %}active{% endif %}">Accessories</a>
+                           </li>
+                            <li class="nav-item">
+                               <a href="{% url 'products_by_category' 'tools_hardware' %}" class="nav-link {% if selected_category == 'tools_hardware' %}active{% endif %}">Tools</a>
+                           </li>
+
+                        </ul>
+                    </nav>
+
+                </div>
+
+          <div id="mg" class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+              {% for product in products %}
+              <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-roofing">
+                <div class="portfolio-content h-100">
+                    <img src="{{ product.images.url }}" class="img-fluid" alt="{{ product.name }}" style="border-radius: 20px">
+                    <div class="portfolio-info">
+                      <h5 class="card-title text-danger">{{ product.name }}</h5>
+                      <a href="{{ product.images.url }}" title="" data-gallery="portfolio-gallery-app" class="glightbox preview-link" style="font-size: 20px"><i class="bi bi-zoom-in">Zoom</i></a>
+                      <a href="{% url 'product_details' product.id %}" title="More Details" class="details-link" style="font-size: 20px; margin-left: 60px"><i class="bi bi-link-45deg"></i>Details</a>
+                    </div>
+                </div>
+             </div><!-- End Portfolio Item -->
+                {% empty %}
+                  <p>No products found in this category</p>
+                {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section><!-- /Projects Section -->
+
+
+{% endblock %}
