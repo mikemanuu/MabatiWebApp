@@ -89,11 +89,12 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 This project is licensed under the MIT License.
 
 ## Author
+This project was developed by:
 **[Emmanuel Rotich]**
-- **LinkedIn**:[(https://www.linkedin.com/in/rotich-emmanuel-14ba25188)]
-- **X(Twitter)**:[(https://www.x.com/mikemanuu)]
-- **Github**:[(https://github.com/mikemanuu)]
-- **Email**:[(mailto:mikemanuu273@gmail.com)]
+- **LinkedIn**:[Connect with me on LinkedIn](https://www.linkedin.com/in/rotich-emmanuel-14ba25188)
+- **X(Twitter)**:[Follow me on X(Twitter)](https://www.x.com/mikemanuu)
+- **GitHub**:[Visit my GitHub profile](https://github.com/mikemanuu)
+- **Email**:[Email Me](mailto:mikemanuu273@gmail.com)]
 
 
 
