@@ -11,8 +11,8 @@
     {% load static %}
 
   <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
-  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <!--<link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon"-->
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -31,7 +31,7 @@
   <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
     {% block styles %}
     {% endblock %}
-
+    
 
 </head>
 
@@ -50,8 +50,8 @@
           <li><a href="{% url 'about' %}">About</a></li>
           <li><a href="{% url 'products' %}">Products</a></li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
-          <li class="btn btn-secondary" style="padding: 1px; margin: 15px"><a href="" style="padding: 1px">Register</a><li>
-          <li class="btn btn-secondary" style="padding: 1px; margin: 15px"><a href="" style="padding: 1px 11px">Login</a></li>
+          <li class="btn btn-secondary" style="padding: 1px; margin: 15px"><a href="{% url 'register' %}" style="padding: 1px">Register</a><li>
+          <li class="btn btn-secondary" style="padding: 1px; margin: 15px"><a href="{% url 'login' %}" style="padding: 1px 11px">Login</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -114,8 +114,8 @@
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Navigation Links</h4>
           <ul>
-            <li><a href="">Register</a></li>
-            <li><a href="#">User Login</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+            <li><a href="{% url 'login' %}">User Login</a></li>
             <li><a href="{% url 'admin_login' %}">Staff Login</a></li>
           </ul>
         </div>

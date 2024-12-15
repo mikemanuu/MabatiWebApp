@@ -59,4 +59,12 @@ class CartItem(models.Model):
         return self.product.price * self.quantity
 
 class Meta:
-   unique_together = ('user', 'product')
+    unique_together = ('user', 'product')
+
+class Register(models.Model):
+    name = models.CharField(max_length=200)
+    username = models.CharField(max_length=200)
+    password = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.name

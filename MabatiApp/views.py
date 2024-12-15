@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Product, Contact, ImageModel, Category, CartItem
-from MabatiApp.forms import ImageUploadForm, ContactForm, ProductForm, RegisterForm, LoginForm
+from .models import Product, Contact, ImageModel, Category, CartItem, Register
+from MabatiApp.forms import ImageUploadForm, ContactForm, ProductForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
@@ -34,11 +34,6 @@ def products(request,category='all'):
 
     return render(request, 'products.html', {'products': products, 'category': category})
 
-
-def cart(request):
-    return render(request, 'cart.html')
-
-
 def checkout(request):
     return render(request, 'checkout.html')
 
@@ -49,25 +44,33 @@ def order_confirmation(request):
 
 def register_user(request):
     if request.method == 'POST':
-        form = RegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('login')
+        form = Register(
+            name = request.POST['name'],
+            username = request.POST['username'],
+            password = request.POST['password']
+        )
+        form.save()
+        return redirect('/login')
     else:
         form = RegisterForm()
-    return render(request, 'register.html', {'form': form})
+    return render(request, 'register.html')
 
 
 def user_login(request):
     if request.method == 'POST':
-        form = LoginForm(data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
-            login(request, user)
-            return redirect('dashboard')
+       if Register.objects.filter(
+           username = request.POST['username'],
+           password = request.POST['password']
+       ).exists():
+           members = Register.objects.get(
+               username = request.POST['username'],
+               password = request.POST['username']
+           )
+           return render(request, 'dashboard.html', {'members': members})
+       else:
+            return render(request, 'login.html')
     else:
-        form = LoginForm()
-    return render(request, 'login.html', {'form': form})
+        return render(request, 'login.html')
 
 
 @login_required
@@ -131,6 +134,7 @@ def delete(request,id):
     cont.delete()
     return redirect('/contact_view')
 
+@login_required
 def add_product(request):
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
@@ -177,7 +181,7 @@ def cart(request):
     total_cost = sum(item.get_total_price() for item in cart_items)
     return render(request, 'cart.html', {'cart_items': cart_items, 'total_cost': total_cost})
 
-@login_required
+
 def add_to_cart(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     cart_item, created = CartItem.objects.get_or_create(user=request.user, product=product)
